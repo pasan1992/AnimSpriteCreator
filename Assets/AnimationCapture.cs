@@ -16,6 +16,9 @@ public class AnimationCapture : MonoBehaviour
     [Tooltip("Camera to use for capturing frames")]
     public Camera captureCamera;
     
+    [Tooltip("List of animation state names (e.g. 'Base Layer.Walk')")]
+    public List<string> animationStateNames = new List<string>();
+    
     [Header("Direction Settings")]
     [Tooltip("Whether to capture animation from multiple directions")]
     public bool captureMultipleDirections = true;
@@ -112,15 +115,6 @@ public class AnimationCapture : MonoBehaviour
     {
         isCapturing = true;
         
-        // Get all animation states from the animator
-        // var animatorController = targetAnimator.runtimeAnimatorController as UnityEngine.Animations.AnimatorController;
-        // if (animatorController == null)
-        // {
-        //     Debug.LogError("Could not get animator controller!");
-        //     isCapturing = false;
-        //     yield break;
-        // }
-        
         // Get all animation clips from the controller
         AnimationClip[] clips = targetAnimator.runtimeAnimatorController.animationClips;
         Debug.Log($"Found {clips.Length} animation clips");
@@ -142,6 +136,10 @@ public class AnimationCapture : MonoBehaviour
             
             Debug.Log($"Processing animation: {animName}");
             processedAnimations.Add(animName);
+            
+            // Create the state name directly in the Base Layer.StateName format
+            string stateName = "Base Layer." + animName;
+            Debug.Log($"Using state name: {stateName}");
             
             if (captureMultipleDirections && characterRoot != null)
             {
@@ -171,7 +169,7 @@ public class AnimationCapture : MonoBehaviour
                     }
                     
                     // Capture all frames for this animation and direction
-                    yield return StartCoroutine(CaptureAnimationFrames(clip, directionSubfolder));
+                    yield return StartCoroutine(CaptureAnimationFrames(clip, stateName, directionSubfolder));
                     
                     // Give time for the UI to update and showing progress
                     yield return new WaitForSeconds(0.1f);
@@ -196,7 +194,7 @@ public class AnimationCapture : MonoBehaviour
                 }
                 
                 // Capture all frames for this animation
-                yield return StartCoroutine(CaptureAnimationFrames(clip, animSubfolder));
+                yield return StartCoroutine(CaptureAnimationFrames(clip, stateName, animSubfolder));
                 
                 // Give time for the UI to update
                 yield return new WaitForSeconds(0.1f);
@@ -213,11 +211,15 @@ public class AnimationCapture : MonoBehaviour
         Debug.Log("Animation capture process complete!");
     }
     
-    private IEnumerator CaptureAnimationFrames(AnimationClip clip, string outputPath)
+    private IEnumerator CaptureAnimationFrames(AnimationClip clip, string stateName, string outputPath)
     {
-        // Prepare the animator
-        targetAnimator.Play(clip.name, 0, 0f);
+        // Use the provided state name
+        Debug.Log($"Using state name: {stateName} for clip: {clip.name}");
+        
+        // Prepare the animator - use the state name
+        targetAnimator.Play(stateName, 0, 0f);
         targetAnimator.speed = 0; // Pause animation
+        targetAnimator.Update(0.0f);
         
         float animationLength = clip.length;
         int frameCount = Mathf.CeilToInt(animationLength * captureFrameRate);
@@ -243,11 +245,21 @@ public class AnimationCapture : MonoBehaviour
         // Capture each frame
         for (int i = 0; i < frameCount; i++)
         {
-            // Set animation time
-            float normalizedTime = (i * timeIncrement) / animationLength;
-            targetAnimator.Play(clip.name, 0, normalizedTime);
+            // Set animation time - temporarily enable animation speed
+            targetAnimator.speed = 1;
             
-            // Wait for animation to update
+            // Set the normalized time for this frame
+            float normalizedTime = (i * timeIncrement) / animationLength;
+            Debug.Log($"Capturing frame {i+1}/{frameCount} at normalized time: {normalizedTime}");
+            
+            // Use the state name for playback
+            targetAnimator.Play(stateName, 0, normalizedTime);
+            
+            // Critical: Force the animator to evaluate the animation at this time
+            targetAnimator.Update(0);
+            targetAnimator.speed = 0;
+            
+            // Wait for animation to fully update in the rendering pipeline
             yield return new WaitForEndOfFrame();
             
             // Capture the frame
@@ -259,7 +271,7 @@ public class AnimationCapture : MonoBehaviour
                 Debug.Log($"Captured frame {i+1}/{frameCount} ({Mathf.Round(normalizedTime * 100)}%)");
             }
             
-            // Small delay to ensure animation is properly updated
+            // Small delay to ensure animation state is completely updated
             yield return null;
         }
         
