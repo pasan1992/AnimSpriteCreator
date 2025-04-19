@@ -1,0 +1,10 @@
+{
+  "animationName": "HumanM@Run01_Forward",
+  "direction": "Down",
+  "frameCount": 3,
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "columns": 3,
+  "rows": 1,
+  "framesPerSecond": 5
+}

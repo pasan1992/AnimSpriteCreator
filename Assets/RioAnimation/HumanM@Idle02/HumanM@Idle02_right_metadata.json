@@ -1,0 +1,10 @@
+{
+  "animationName": "HumanM@Idle02",
+  "direction": "Right",
+  "frameCount": 14,
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "columns": 14,
+  "rows": 1,
+  "framesPerSecond": 5
+}

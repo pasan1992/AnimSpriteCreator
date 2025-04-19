@@ -1,0 +1,10 @@
+{
+  "animationName": "RunForward",
+  "direction": "DownLeft",
+  "frameCount": 4,
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "columns": 4,
+  "rows": 1,
+  "framesPerSecond": 5
+}

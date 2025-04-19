@@ -1,0 +1,10 @@
+{
+  "animationName": "IdleCombat",
+  "direction": "Down",
+  "frameCount": 9,
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "columns": 9,
+  "rows": 1,
+  "framesPerSecond": 5
+}
