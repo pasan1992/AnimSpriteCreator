@@ -1,0 +1,11 @@
+{
+    "animationName": "OneHand_Up_Idle",
+    "direction": "combined",
+    "frameCount": 80,
+    "frameWidth": 256,
+    "frameHeight": 256,
+    "columns": 10,
+    "rows": 8,
+    "framesPerSecond": 5,
+    "filePath": "C:/Projects/Unity3d/AnimationCreator/AnimSpriteCreator/Assets\\GeneratedAnimations/Combined\\combined_OneHand_Up_Idle_combined.png"
+}

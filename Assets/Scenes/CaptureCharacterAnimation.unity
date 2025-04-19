@@ -226,6 +226,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e34f7e0669ab7df47ba942c58eb0e464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &357959839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 357959841}
+  - component: {fileID: 357959840}
+  m_Layer: 0
+  m_Name: SpriteSheet Combiner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &357959840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357959839}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20cae9b2962027040a14646311d11adf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputFolderPath: AnimationFrames
+  animationNameFilter: 
+  includeSubfolders: 1
+  outputFolderPath: GeneratedAnimations/Combined
+  outputFileBaseName: combined_
+  imageFormat: 0
+  combinationMode: 0
+  combineDirections: 1
+  maxFramesPerRow: 8
+  addBorder: 0
+  borderThickness: 1
+  borderColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!4 &357959841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357959839}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &578401333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -338,7 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetAnimator: {fileID: 578401335}
-  captureFrameRate: 24
+  captureFrameRate: 5
   captureCamera: {fileID: 963194227}
   cameraDistance: 3
   verticalOffset: 0
@@ -351,7 +407,7 @@ MonoBehaviour:
   imageFormat: 0
   frameWidth: 256
   frameHeight: 256
-  maxFramesPerRow: 8
+  maxFramesPerRow: 20
   backgroundColor: {r: 0, g: 0, b: 0, a: 0}
   enableHighResCapture: 0
   resolutionMultiplier: 2
@@ -452,59 +508,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 12.742, y: -109.062, z: -48.775}
---- !u!1 &937801207
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 937801209}
-  - component: {fileID: 937801208}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &937801208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937801207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8911bd74cecdf7d4295b0bb7dfbed5a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteSheetsFolder: AnimationFrames
-  animationBaseName: Anim_
-  framesPerSecond: 24
-  loopAnimations: 1
-  outputFolder: GeneratedAnimations
-  organizeByDirection: 1
-  generateAnimatorController: 1
-  useFixedCellSize: 1
-  cellSize: {x: 256, y: 256}
---- !u!4 &937801209
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937801207}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.015192211, y: 1.080345, z: 0.013623625}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,4 +764,4 @@ SceneRoots:
   - {fileID: 2020226203}
   - {fileID: 130101440}
   - {fileID: 578401333}
-  - {fileID: 937801209}
+  - {fileID: 357959841}

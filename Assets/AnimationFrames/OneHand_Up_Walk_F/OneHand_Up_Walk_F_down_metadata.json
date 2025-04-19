@@ -1,10 +1,10 @@
 {
   "animationName": "OneHand_Up_Walk_F",
   "direction": "Down",
-  "frameCount": 32,
+  "frameCount": 7,
   "frameWidth": 256,
   "frameHeight": 256,
-  "columns": 8,
-  "rows": 4,
-  "framesPerSecond": 24
+  "columns": 7,
+  "rows": 1,
+  "framesPerSecond": 5
 }

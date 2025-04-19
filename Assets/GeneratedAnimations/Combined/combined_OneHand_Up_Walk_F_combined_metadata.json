@@ -1,0 +1,11 @@
+{
+    "animationName": "OneHand_Up_Walk_F",
+    "direction": "combined",
+    "frameCount": 56,
+    "frameWidth": 256,
+    "frameHeight": 256,
+    "columns": 7,
+    "rows": 8,
+    "framesPerSecond": 5,
+    "filePath": "C:/Projects/Unity3d/AnimationCreator/AnimSpriteCreator/Assets\\GeneratedAnimations/Combined\\combined_OneHand_Up_Walk_F_combined.png"
+}
