@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4132312772176831909, guid: 64b182395c0b6744a920c74bce3ece13, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8073086772555192299, guid: 64b182395c0b6744a920c74bce3ece13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -527,6 +527,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1782702501690864755, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1395327998}
+    - targetCorrespondingSourceObject: {fileID: 1782702501690864755, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1395327999}
   m_SourcePrefab: {fileID: 100100000, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
 --- !u!1 &705507993
 GameObject:
@@ -797,7 +800,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395327995}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a76d6048612737c4f88b39a12a3a54c9, type: 3}
   m_Name: 
@@ -820,6 +823,38 @@ MonoBehaviour:
   backgroundColor: {r: 0, g: 0, b: 0, a: 0}
   enableHighResCapture: 0
   resolutionMultiplier: 2
+--- !u!114 &1395327999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395327995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6f5ae30205f2e4b95d04e3120b322c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetAnimator: {fileID: 1395327996}
+  captureFrameRate: 24
+  captureCamera: {fileID: 963194227}
+  cameraDistance: 3.32
+  verticalOffset: 0
+  autoFrameCharacter: 1
+  boundsExpansion: 1.432
+  captureMultipleDirections: 1
+  characterRoot: {fileID: 1395327995}
+  outputBaseDirectory: BaseAnimation1
+  outputFileBaseName: animation_
+  imageFormat: 0
+  frameWidth: 256
+  frameHeight: 256
+  maxFramesPerRow: 100
+  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  enableHighResCapture: 0
+  resolutionMultiplier: 2
+  loopAnimations: 1
+  generateAnimatorController: 1
 --- !u!1 &2020226201
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,10 @@
+{
+  "animationName": "BowShot",
+  "direction": "Left",
+  "frameCount": 24,
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "columns": 24,
+  "rows": 1,
+  "framesPerSecond": 24
+}

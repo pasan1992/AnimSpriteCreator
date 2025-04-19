@@ -1,0 +1,10 @@
+{
+  "animationName": "MiningLoop",
+  "direction": "UpRight",
+  "frameCount": 31,
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "columns": 31,
+  "rows": 1,
+  "framesPerSecond": 24
+}

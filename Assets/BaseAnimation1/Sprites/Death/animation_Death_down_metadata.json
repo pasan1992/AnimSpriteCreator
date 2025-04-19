@@ -1,0 +1,10 @@
+{
+  "animationName": "Death",
+  "direction": "Down",
+  "frameCount": 40,
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "columns": 40,
+  "rows": 1,
+  "framesPerSecond": 24
+}
