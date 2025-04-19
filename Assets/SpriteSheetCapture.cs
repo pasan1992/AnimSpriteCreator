@@ -433,6 +433,9 @@ public class SpriteSheetCapture : MonoBehaviour
         // Calculate time increment per frame
         float timeIncrement = 1.0f / captureFrameRate;
         
+        // Track frame positions
+        List<FramePosition> framePositions = new List<FramePosition>();
+        
         // Capture each frame
         for (int i = 0; i < frameCount; i++)
         {
@@ -493,6 +496,16 @@ public class SpriteSheetCapture : MonoBehaviour
             
             // Copy frame pixels to sprite sheet
             spriteSheet.SetPixels(x, y, frameWidth, frameHeight, frameTexture.GetPixels());
+            
+            // Write additional metadata to help with correct slicing
+            // Store frame position in the filename
+            framePositions.Add(new FramePosition { 
+                index = i, 
+                x = x, 
+                y = y, 
+                width = frameWidth, 
+                height = frameHeight 
+            });
             
             // Report progress
             if (i % 5 == 0) // Only log every 5 frames to reduce console spam
@@ -598,4 +611,13 @@ public class SpriteSheetCapture : MonoBehaviour
         
         GUILayout.EndArea();
     }
+}
+
+public class FramePosition
+{
+    public int index;
+    public int x;
+    public int y;
+    public int width;
+    public int height;
 }

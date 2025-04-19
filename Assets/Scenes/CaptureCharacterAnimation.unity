@@ -238,6 +238,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vampire
       objectReference: {fileID: 0}
+    - target: {fileID: 1446379636734334, guid: 02118f3f769d0104dbc7533300879896, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1548754080238186, guid: 02118f3f769d0104dbc7533300879896, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -256,7 +260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4695178246411186, guid: 02118f3f769d0104dbc7533300879896, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4695178246411186, guid: 02118f3f769d0104dbc7533300879896, type: 3}
       propertyPath: m_LocalRotation.x
@@ -264,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4695178246411186, guid: 02118f3f769d0104dbc7533300879896, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4695178246411186, guid: 02118f3f769d0104dbc7533300879896, type: 3}
       propertyPath: m_LocalRotation.z
@@ -448,6 +452,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 12.742, y: -109.062, z: -48.775}
+--- !u!1 &937801207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 937801209}
+  - component: {fileID: 937801208}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &937801208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937801207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8911bd74cecdf7d4295b0bb7dfbed5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteSheetsFolder: AnimationFrames
+  animationBaseName: Anim_
+  framesPerSecond: 24
+  loopAnimations: 1
+  outputFolder: GeneratedAnimations
+  organizeByDirection: 1
+  generateAnimatorController: 1
+  useFixedCellSize: 1
+  cellSize: {x: 256, y: 256}
+--- !u!4 &937801209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937801207}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.015192211, y: 1.080345, z: 0.013623625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,8 +592,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9659259, z: -0.25881907, w: 0}
-  m_LocalPosition: {x: 0, y: 6, z: 10.392304}
+  m_LocalRotation: {x: 0, y: 0.976296, z: -0.2164396, w: 0}
+  m_LocalPosition: {x: 0, y: 5.0714192, z: 10.875693}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -560,7 +617,7 @@ MonoBehaviour:
   useOrthographic: 1
   orthographicSize: 2.5
   fieldOfView: 60
-  viewAngle: 30
+  viewAngle: 25
   horizontalAngle: 0
   pixelPerfect: 1
   pixelScale: 1
@@ -573,7 +630,7 @@ MonoBehaviour:
   characterOffset: {x: 0, y: 0, z: 0}
   overrideCharacterScale: 0
   characterScale: {x: 1, y: 1, z: 1}
-  facingDirection: 90
+  facingDirection: 0
   showCharacterReference: 1
   referenceSphereSize: 1
 --- !u!95 &963194230
@@ -704,3 +761,4 @@ SceneRoots:
   - {fileID: 2020226203}
   - {fileID: 130101440}
   - {fileID: 578401333}
+  - {fileID: 937801209}

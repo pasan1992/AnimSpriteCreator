@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d9b4b27424eb0584bb6cd4d137259823
+guid: 488841658a7146942a8877c7e3c25fcd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,359 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_0
+      name: animation_OneHand_Up_Idle_upleft_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ffaa7691627f19f0800000000000000
+      internalID: -495551670525448202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c2a264e86c7bc4d0800000000000000
+      internalID: -3113257927446453565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 851a6a151add6a400800000000000000
+      internalID: 335198907215028568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c323f1b0316f1bf40800000000000000
+      internalID: 5742641561525498428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b620b2376eafcaca0800000000000000
+      internalID: -6004148335510093205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19865d1a32bac41c0800000000000000
+      internalID: -4518048156632127343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db1484bf3a146e1e0800000000000000
+      internalID: -2168973997981023811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 243a945b05f271730800000000000000
+      internalID: 3969693620235772738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_11
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_12
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_13
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_14
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_15
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_OneHand_Up_Idle_upleft_16
       rect:
         serializedVersion: 2
         x: 0
@@ -112,14 +464,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ba6101d48eb1bd6e0800000000000000
-      internalID: -1811823740547230037
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_1
+      name: animation_OneHand_Up_Idle_upleft_17
       rect:
         serializedVersion: 2
         x: 256
@@ -134,14 +486,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6447865b02f631060800000000000000
-      internalID: 6922999238471742534
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_2
+      name: animation_OneHand_Up_Idle_upleft_18
       rect:
         serializedVersion: 2
         x: 512
@@ -156,14 +508,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 56b30ee0ef0f4f1e0800000000000000
-      internalID: -2164840546896430235
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_3
+      name: animation_OneHand_Up_Idle_upleft_19
       rect:
         serializedVersion: 2
         x: 768
@@ -178,14 +530,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ce634453d8e8f020800000000000000
-      internalID: 2375904797787385541
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_4
+      name: animation_OneHand_Up_Idle_upleft_20
       rect:
         serializedVersion: 2
         x: 1024
@@ -200,14 +552,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9863c324778fcef0800000000000000
-      internalID: -85700935010785121
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_5
+      name: animation_OneHand_Up_Idle_upleft_21
       rect:
         serializedVersion: 2
         x: 1280
@@ -222,14 +574,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: efee27850ef3a8ac0800000000000000
-      internalID: -3852196298472886530
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_6
+      name: animation_OneHand_Up_Idle_upleft_22
       rect:
         serializedVersion: 2
         x: 1536
@@ -244,14 +596,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79f4dc1a5394a8220800000000000000
-      internalID: 2488882238772301719
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_7
+      name: animation_OneHand_Up_Idle_upleft_23
       rect:
         serializedVersion: 2
         x: 1792
@@ -266,14 +618,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f8c80b1f4b28ca60800000000000000
-      internalID: 7694447582118463737
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_8
+      name: animation_OneHand_Up_Idle_upleft_24
       rect:
         serializedVersion: 2
         x: 0
@@ -295,7 +647,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_9
+      name: animation_OneHand_Up_Idle_upleft_25
       rect:
         serializedVersion: 2
         x: 256
@@ -317,7 +669,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_10
+      name: animation_OneHand_Up_Idle_upleft_26
       rect:
         serializedVersion: 2
         x: 512
@@ -339,7 +691,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_11
+      name: animation_OneHand_Up_Idle_upleft_27
       rect:
         serializedVersion: 2
         x: 768
@@ -361,7 +713,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_12
+      name: animation_OneHand_Up_Idle_upleft_28
       rect:
         serializedVersion: 2
         x: 1024
@@ -383,7 +735,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_13
+      name: animation_OneHand_Up_Idle_upleft_29
       rect:
         serializedVersion: 2
         x: 1280
@@ -405,7 +757,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_14
+      name: animation_OneHand_Up_Idle_upleft_30
       rect:
         serializedVersion: 2
         x: 1536
@@ -427,7 +779,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_15
+      name: animation_OneHand_Up_Idle_upleft_31
       rect:
         serializedVersion: 2
         x: 1792
@@ -449,7 +801,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_16
+      name: animation_OneHand_Up_Idle_upleft_32
       rect:
         serializedVersion: 2
         x: 0
@@ -471,7 +823,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_17
+      name: animation_OneHand_Up_Idle_upleft_33
       rect:
         serializedVersion: 2
         x: 256
@@ -493,7 +845,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_18
+      name: animation_OneHand_Up_Idle_upleft_34
       rect:
         serializedVersion: 2
         x: 512
@@ -515,7 +867,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_19
+      name: animation_OneHand_Up_Idle_upleft_35
       rect:
         serializedVersion: 2
         x: 768
@@ -537,7 +889,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_20
+      name: animation_OneHand_Up_Idle_upleft_36
       rect:
         serializedVersion: 2
         x: 1024
@@ -559,7 +911,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_21
+      name: animation_OneHand_Up_Idle_upleft_37
       rect:
         serializedVersion: 2
         x: 1280
@@ -581,7 +933,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_22
+      name: animation_OneHand_Up_Idle_upleft_38
       rect:
         serializedVersion: 2
         x: 1536
@@ -603,7 +955,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_23
+      name: animation_OneHand_Up_Idle_upleft_39
       rect:
         serializedVersion: 2
         x: 1792
@@ -625,7 +977,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_24
+      name: animation_OneHand_Up_Idle_upleft_40
       rect:
         serializedVersion: 2
         x: 0
@@ -647,7 +999,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_25
+      name: animation_OneHand_Up_Idle_upleft_41
       rect:
         serializedVersion: 2
         x: 256
@@ -669,7 +1021,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_26
+      name: animation_OneHand_Up_Idle_upleft_42
       rect:
         serializedVersion: 2
         x: 512
@@ -691,7 +1043,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_27
+      name: animation_OneHand_Up_Idle_upleft_43
       rect:
         serializedVersion: 2
         x: 768
@@ -713,7 +1065,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_28
+      name: animation_OneHand_Up_Idle_upleft_44
       rect:
         serializedVersion: 2
         x: 1024
@@ -735,7 +1087,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_29
+      name: animation_OneHand_Up_Idle_upleft_45
       rect:
         serializedVersion: 2
         x: 1280
@@ -757,7 +1109,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_30
+      name: animation_OneHand_Up_Idle_upleft_46
       rect:
         serializedVersion: 2
         x: 1536
@@ -779,7 +1131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_OneHand_Up_Walk_F_down_31
+      name: animation_OneHand_Up_Idle_upleft_47
       rect:
         serializedVersion: 2
         x: 1792
@@ -814,38 +1166,54 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      animation_OneHand_Up_Walk_F_down_0: -1811823740547230037
-      animation_OneHand_Up_Walk_F_down_1: 6922999238471742534
-      animation_OneHand_Up_Walk_F_down_10: 0
-      animation_OneHand_Up_Walk_F_down_11: 0
-      animation_OneHand_Up_Walk_F_down_12: 0
-      animation_OneHand_Up_Walk_F_down_13: 0
-      animation_OneHand_Up_Walk_F_down_14: 0
-      animation_OneHand_Up_Walk_F_down_15: 0
-      animation_OneHand_Up_Walk_F_down_16: 0
-      animation_OneHand_Up_Walk_F_down_17: 0
-      animation_OneHand_Up_Walk_F_down_18: 0
-      animation_OneHand_Up_Walk_F_down_19: 0
-      animation_OneHand_Up_Walk_F_down_2: -2164840546896430235
-      animation_OneHand_Up_Walk_F_down_20: 0
-      animation_OneHand_Up_Walk_F_down_21: 0
-      animation_OneHand_Up_Walk_F_down_22: 0
-      animation_OneHand_Up_Walk_F_down_23: 0
-      animation_OneHand_Up_Walk_F_down_24: 0
-      animation_OneHand_Up_Walk_F_down_25: 0
-      animation_OneHand_Up_Walk_F_down_26: 0
-      animation_OneHand_Up_Walk_F_down_27: 0
-      animation_OneHand_Up_Walk_F_down_28: 0
-      animation_OneHand_Up_Walk_F_down_29: 0
-      animation_OneHand_Up_Walk_F_down_3: 2375904797787385541
-      animation_OneHand_Up_Walk_F_down_30: 0
-      animation_OneHand_Up_Walk_F_down_31: 0
-      animation_OneHand_Up_Walk_F_down_4: -85700935010785121
-      animation_OneHand_Up_Walk_F_down_5: -3852196298472886530
-      animation_OneHand_Up_Walk_F_down_6: 2488882238772301719
-      animation_OneHand_Up_Walk_F_down_7: 7694447582118463737
-      animation_OneHand_Up_Walk_F_down_8: 0
-      animation_OneHand_Up_Walk_F_down_9: 0
+      animation_OneHand_Up_Idle_upleft_0: -495551670525448202
+      animation_OneHand_Up_Idle_upleft_1: -3113257927446453565
+      animation_OneHand_Up_Idle_upleft_10: 0
+      animation_OneHand_Up_Idle_upleft_11: 0
+      animation_OneHand_Up_Idle_upleft_12: 0
+      animation_OneHand_Up_Idle_upleft_13: 0
+      animation_OneHand_Up_Idle_upleft_14: 0
+      animation_OneHand_Up_Idle_upleft_15: 0
+      animation_OneHand_Up_Idle_upleft_16: 0
+      animation_OneHand_Up_Idle_upleft_17: 0
+      animation_OneHand_Up_Idle_upleft_18: 0
+      animation_OneHand_Up_Idle_upleft_19: 0
+      animation_OneHand_Up_Idle_upleft_2: 335198907215028568
+      animation_OneHand_Up_Idle_upleft_20: 0
+      animation_OneHand_Up_Idle_upleft_21: 0
+      animation_OneHand_Up_Idle_upleft_22: 0
+      animation_OneHand_Up_Idle_upleft_23: 0
+      animation_OneHand_Up_Idle_upleft_24: 0
+      animation_OneHand_Up_Idle_upleft_25: 0
+      animation_OneHand_Up_Idle_upleft_26: 0
+      animation_OneHand_Up_Idle_upleft_27: 0
+      animation_OneHand_Up_Idle_upleft_28: 0
+      animation_OneHand_Up_Idle_upleft_29: 0
+      animation_OneHand_Up_Idle_upleft_3: 5742641561525498428
+      animation_OneHand_Up_Idle_upleft_30: 0
+      animation_OneHand_Up_Idle_upleft_31: 0
+      animation_OneHand_Up_Idle_upleft_32: 0
+      animation_OneHand_Up_Idle_upleft_33: 0
+      animation_OneHand_Up_Idle_upleft_34: 0
+      animation_OneHand_Up_Idle_upleft_35: 0
+      animation_OneHand_Up_Idle_upleft_36: 0
+      animation_OneHand_Up_Idle_upleft_37: 0
+      animation_OneHand_Up_Idle_upleft_38: 0
+      animation_OneHand_Up_Idle_upleft_39: 0
+      animation_OneHand_Up_Idle_upleft_4: -6004148335510093205
+      animation_OneHand_Up_Idle_upleft_40: 0
+      animation_OneHand_Up_Idle_upleft_41: 0
+      animation_OneHand_Up_Idle_upleft_42: 0
+      animation_OneHand_Up_Idle_upleft_43: 0
+      animation_OneHand_Up_Idle_upleft_44: 0
+      animation_OneHand_Up_Idle_upleft_45: 0
+      animation_OneHand_Up_Idle_upleft_46: 0
+      animation_OneHand_Up_Idle_upleft_47: 0
+      animation_OneHand_Up_Idle_upleft_5: -4518048156632127343
+      animation_OneHand_Up_Idle_upleft_6: -2168973997981023811
+      animation_OneHand_Up_Idle_upleft_7: 3969693620235772738
+      animation_OneHand_Up_Idle_upleft_8: 0
+      animation_OneHand_Up_Idle_upleft_9: 0
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
