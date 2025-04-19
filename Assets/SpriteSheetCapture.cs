@@ -79,13 +79,17 @@ public class SpriteSheetCapture : MonoBehaviour
     private float originalCameraSize;
     
     // Direction-related variables
-    private enum Direction { Down, Left, Up, Right }
+    private enum Direction { Down, DownLeft, Left, UpLeft, Up, UpRight, Right, DownRight }
     private readonly Dictionary<Direction, float> directionAngles = new Dictionary<Direction, float>
     {
         { Direction.Down, 0f },
-        { Direction.Left, -45f },
+        { Direction.DownLeft, -45f },
+        { Direction.Left, -90f },
+        { Direction.UpLeft, -135f },
         { Direction.Up, -180f },
-        { Direction.Right, 45f }
+        { Direction.UpRight, -225f },
+        { Direction.Right, 90f },
+        { Direction.DownRight, 45f }
     };
     
     public enum CaptureFormat

@@ -295,8 +295,8 @@ public class AngledTopDownCameraSetup : MonoBehaviour
     // Presets for common angles
     public void ApplyClassicZeldaPreset()
     {
-        viewAngle = 45f;
-        horizontalAngle = -45f;
+        viewAngle = 25f;
+        horizontalAngle = 0f;
         orthographicSize = 2.5f;
         UpdateCameraSettings();
         Debug.Log("Applied classic Zelda-like (A Link to the Past) preset");
@@ -305,7 +305,7 @@ public class AngledTopDownCameraSetup : MonoBehaviour
     public void ApplyStardewValleyPreset()
     {
         viewAngle = 60f;
-        horizontalAngle = -45f;
+        horizontalAngle = 0f;
         orthographicSize = 3f;
         UpdateCameraSettings();
         Debug.Log("Applied Stardew Valley-like preset");
@@ -314,7 +314,7 @@ public class AngledTopDownCameraSetup : MonoBehaviour
     public void ApplyEnterTheGungeonPreset()
     {
         viewAngle = 50f;
-        horizontalAngle = -45f;
+        horizontalAngle = 0f;
         orthographicSize = 4f;
         UpdateCameraSettings();
         Debug.Log("Applied Enter the Gungeon-like preset");

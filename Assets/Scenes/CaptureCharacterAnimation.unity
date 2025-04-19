@@ -226,34 +226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e34f7e0669ab7df47ba942c58eb0e464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetAnimator: {fileID: 130101442}
-  animationStateNames: []
-  captureFrameRate: 24
-  captureCamera: {fileID: 963194227}
-  captureMultipleDirections: 1
-  characterRoot: {fileID: 130101441}
-  useCameraSetupComponent: 1
-  cameraSetupComponent: {fileID: 963194229}
-  outputFolderName: AnimationFrames
-  outputFileBaseName: frame_
-  imageFormat: 0
-  captureWidth: 256
-  captureHeight: 256
-  characterSizeMultiplier: 1
-  cameraDistanceMultiplier: 1
-  backgroundColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 0
-  maxFramesPerRow: 8
-  framePadding: 2
-  saveIndividualFrames: 0
-  characterName: Character
-  movementSpeed: 5
-  renderTexture: {fileID: 0}
-  isCapturing: 0
-  fullOutputPath: 
 --- !u!1001 &578401333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -284,7 +256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4695178246411186, guid: 02118f3f769d0104dbc7533300879896, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4695178246411186, guid: 02118f3f769d0104dbc7533300879896, type: 3}
       propertyPath: m_LocalRotation.x
@@ -292,7 +264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4695178246411186, guid: 02118f3f769d0104dbc7533300879896, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4695178246411186, guid: 02118f3f769d0104dbc7533300879896, type: 3}
       propertyPath: m_LocalRotation.z
@@ -332,7 +304,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1446379636734334, guid: 02118f3f769d0104dbc7533300879896, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 578401340}
+      addedObject: {fileID: 578401342}
   m_SourcePrefab: {fileID: 100100000, guid: 02118f3f769d0104dbc7533300879896, type: 3}
 --- !u!1 &578401334 stripped
 GameObject:
@@ -349,32 +321,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4695178246411186, guid: 02118f3f769d0104dbc7533300879896, type: 3}
   m_PrefabInstance: {fileID: 578401333}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &578401340
+--- !u!114 &578401342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578401334}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 136e5482ab912aa4c9638616859f8292, type: 3}
+  m_Script: {fileID: 11500000, guid: a76d6048612737c4f88b39a12a3a54c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetAnimator: {fileID: 578401335}
-  captureFrameRate: 25
+  captureFrameRate: 24
   captureCamera: {fileID: 963194227}
-  animationStateNames:
-  - Idle
-  - Walk
+  cameraDistance: 3
+  verticalOffset: 0
+  autoFrameCharacter: 1
+  boundsExpansion: 1.2
   captureMultipleDirections: 1
   characterRoot: {fileID: 578401334}
   outputFolderName: AnimationFrames
-  outputFileBaseName: frame_
+  outputFileBaseName: animation_
   imageFormat: 0
-  captureWidth: 256
-  captureHeight: 256
+  frameWidth: 256
+  frameHeight: 256
+  maxFramesPerRow: 8
   backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  enableHighResCapture: 0
+  resolutionMultiplier: 2
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +573,7 @@ MonoBehaviour:
   characterOffset: {x: 0, y: 0, z: 0}
   overrideCharacterScale: 0
   characterScale: {x: 1, y: 1, z: 1}
-  facingDirection: 0
+  facingDirection: 90
   showCharacterReference: 1
   referenceSphereSize: 1
 --- !u!95 &963194230
