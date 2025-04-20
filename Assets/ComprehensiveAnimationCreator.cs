@@ -731,137 +731,64 @@ public class ComprehensiveAnimationCreator : MonoBehaviour
         // Force AssetDatabase refresh to ensure the file is imported
         AssetDatabase.Refresh();
         
-        // Get the actual file path
-        string fullPath = Application.dataPath + spriteSheetPath.Substring(6);
-        
         // Check if file exists
+        string fullPath = Application.dataPath + spriteSheetPath.Substring(6);
         if (!File.Exists(fullPath))
         {
             Debug.LogError($"Sprite sheet file not found at {fullPath}");
             return null;
         }
         
-        // Load the sprite sheet directly from the file
-        byte[] fileData = File.ReadAllBytes(fullPath);
-        Texture2D spriteSheet = new Texture2D(2, 2);
-        spriteSheet.LoadImage(fileData);
-        
-        // Get dimensions
-        int textureWidth = spriteSheet.width;
-        int textureHeight = spriteSheet.height;
-        
-        // Calculate grid
-        int columns = textureWidth / frameWidth;
-        int rows = textureHeight / frameHeight;
-        int totalFrames = columns * rows;
-        
-        Debug.Log($"Loaded sprite sheet directly: {textureWidth}x{textureHeight}, Grid: {columns}x{rows}, Cell: {frameWidth}x{frameHeight}");
-        
-        // Create directory for individual frames
-        string frameDir = Path.Combine(Application.dataPath, outputBaseDirectory, "SpriteFrames", animationName, direction);
-        if (!Directory.Exists(frameDir))
+        // Setup sprite sheet import settings to slice it properly
+        TextureImporter importer = AssetImporter.GetAtPath(spriteSheetPath) as TextureImporter;
+        if (importer != null)
         {
-            Directory.CreateDirectory(frameDir);
+            // Configure the texture as a sprite sheet
+            importer.textureType = TextureImporterType.Sprite;
+            importer.spriteImportMode = SpriteImportMode.Multiple;
+            importer.filterMode = FilterMode.Bilinear;
+            importer.mipmapEnabled = false;
+            importer.alphaIsTransparency = true;
+            
+            // Create sprite sheet import settings
+            SpriteMetaData[] spriteSheet = GenerateSpriteSheetMetaData(fullPath);
+            importer.spritesheet = spriteSheet;
+            
+            // Apply import settings and reimport the texture
+            EditorUtility.SetDirty(importer);
+            importer.SaveAndReimport();
+            
+            Debug.Log($"Configured sprite sheet slicing with {spriteSheet.Length} frames");
         }
         
-        // List to hold sprite assets
-        List<Sprite> sprites = new List<Sprite>();
-        List<string> framePaths = new List<string>();
-        
-        // Extract individual frames as separate files
-        for (int y = 0; y < rows; y++)
-        {
-            for (int x = 0; x < columns; x++)
-            {
-                int frameIndex = y * columns + x;
-                
-                // Calculate frame position (y is flipped in texture coordinates)
-                int posX = x * frameWidth;
-                int posY = textureHeight - ((y + 1) * frameHeight);
-                
-                // Skip frames that would go outside the texture
-                if (posX >= textureWidth || posY < 0 || posX + frameWidth > textureWidth || posY + frameHeight > textureHeight)
-                {
-                    Debug.LogWarning($"Frame {frameIndex} would exceed texture bounds at ({posX},{posY}). Skipping.");
-                    continue;
-                }
-                
-                // Create a new texture for this frame
-                Texture2D frameTexture = new Texture2D(frameWidth, frameHeight, TextureFormat.RGBA32, false);
-                
-                // Copy pixels from the sprite sheet
-                Color[] pixels = spriteSheet.GetPixels(posX, posY, frameWidth, frameHeight);
-                frameTexture.SetPixels(pixels);
-                frameTexture.Apply();
-                
-                // Save the frame as a PNG
-                string frameName = $"frame_{frameIndex:D3}.png";
-                string framePath = Path.Combine(frameDir, frameName);
-                File.WriteAllBytes(framePath, frameTexture.EncodeToPNG());
-                
-                // Record the asset path for later import
-                string assetPath = "Assets" + framePath.Substring(Application.dataPath.Length).Replace('\\', '/');
-                framePaths.Add(assetPath);
-                
-                Debug.Log($"Extracted frame {frameIndex} to {assetPath}");
-                
-                // Clean up
-                Destroy(frameTexture);
-            }
-        }
-        
-        // Clean up the sprite sheet texture
-        Destroy(spriteSheet);
-        
-        // Force a refresh to import all the new frame images
-        AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
-        
-        // Wait for import to complete
-        System.Threading.Thread.Sleep(1000);
-        
-        // Configure all the frame textures as sprites
-        foreach (string framePath in framePaths)
-        {
-            TextureImporter importer = AssetImporter.GetAtPath(framePath) as TextureImporter;
-            if (importer != null)
-            {
-                importer.textureType = TextureImporterType.Sprite;
-                importer.spriteImportMode = SpriteImportMode.Single;
-                importer.spritePixelsPerUnit = 100;
-                importer.mipmapEnabled = false;
-                importer.filterMode = FilterMode.Bilinear;
-                importer.alphaIsTransparency = true;
-                importer.SaveAndReimport();
-            }
-        }
-        
-        // One more refresh to ensure imports are complete
+        // Force a refresh to ensure the sprite sheet is properly imported with slices
         AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
         System.Threading.Thread.Sleep(500);
         
-        // Load all the sprite frames
-        foreach (string framePath in framePaths)
+        // Load all sprites from the sprite sheet
+        Object[] spriteObjects = AssetDatabase.LoadAllAssetsAtPath(spriteSheetPath);
+        List<Sprite> sprites = new List<Sprite>();
+        
+        foreach (Object obj in spriteObjects)
         {
-            Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(framePath);
-            if (sprite != null)
+            if (obj is Sprite sprite)
             {
                 sprites.Add(sprite);
-                Debug.Log($"Loaded sprite from {framePath}");
-            }
-            else
-            {
-                Debug.LogWarning($"Failed to load sprite from {framePath}");
+                Debug.Log($"Loaded sprite slice: {sprite.name}");
             }
         }
+        
+        // Sort sprites by name (which should contain frame numbers)
+        sprites = sprites.OrderBy(s => s.name).ToList();
         
         // Check if we have sprites
         if (sprites.Count == 0)
         {
-            Debug.LogError($"No sprites were extracted from {spriteSheetPath}");
+            Debug.LogError($"No sprite slices were found in {spriteSheetPath}");
             return null;
         }
         
-        Debug.Log($"Successfully extracted {sprites.Count} sprite frames");
+        Debug.Log($"Successfully loaded {sprites.Count} sprite slices from the sprite sheet");
         
         // Create animation clip name with proper direction suffix
         string clipName = $"{outputFileBaseName}{animationName}_{direction}";
@@ -917,107 +844,171 @@ public class ComprehensiveAnimationCreator : MonoBehaviour
         return clip;
     }
     
-    // Create an animator controller with all animations
+    // Generate sprite sheet metadata for slicing
+    private SpriteMetaData[] GenerateSpriteSheetMetaData(string fullPath)
+    {
+        // Load the sprite sheet directly from the file to get dimensions
+        byte[] fileData = File.ReadAllBytes(fullPath);
+        Texture2D spriteSheet = new Texture2D(2, 2);
+        spriteSheet.LoadImage(fileData);
+        
+        // Get dimensions
+        int textureWidth = spriteSheet.width;
+        int textureHeight = spriteSheet.height;
+        
+        // Calculate grid
+        int columns = textureWidth / frameWidth;
+        int rows = textureHeight / frameHeight;
+        
+        Debug.Log($"Generating sprite sheet metadata: {textureWidth}x{textureHeight}, Grid: {columns}x{rows}, Cell: {frameWidth}x{frameHeight}");
+        
+        // Create sprite metadata for each frame
+        List<SpriteMetaData> spriteMetaDataList = new List<SpriteMetaData>();
+        
+        for (int y = 0; y < rows; y++)
+        {
+            for (int x = 0; x < columns; x++)
+            {
+                int frameIndex = y * columns + x;
+                
+                // Calculate frame position (y is flipped in texture coordinates)
+                int posX = x * frameWidth;
+                int posY = textureHeight - ((y + 1) * frameHeight);
+                
+                // Skip frames that would go outside the texture boundaries
+                if (posX >= textureWidth || posY < 0 || posX + frameWidth > textureWidth || posY + frameHeight > textureHeight)
+                {
+                    Debug.LogWarning($"Frame {frameIndex} would exceed texture bounds at ({posX},{posY}). Skipping.");
+                    continue;
+                }
+                
+                // Create sprite metadata for this frame
+                SpriteMetaData spriteMetaData = new SpriteMetaData
+                {
+                    name = $"frame_{frameIndex:D3}",
+                    alignment = 9, // Center
+                    pivot = new Vector2(0.5f, 0.5f),
+                    rect = new Rect(posX, posY, frameWidth, frameHeight)
+                };
+                
+                spriteMetaDataList.Add(spriteMetaData);
+            }
+        }
+        
+        // Clean up the temporary texture
+        Destroy(spriteSheet);
+        
+        Debug.Log($"Created metadata for {spriteMetaDataList.Count} sprite slices");
+        return spriteMetaDataList.ToArray();
+    }
+    
+    // Create an animator controller containing all animations
     private void CreateAnimatorController(Dictionary<string, Dictionary<string, AnimationClip>> allAnimations, string outputPath)
     {
-        // Create animator controller path
-        string assetPath = "Assets" + outputPath.Substring(Application.dataPath.Length).Replace('\\', '/');
-        string controllerPath = Path.Combine(assetPath, "AnimationController.controller");
+        string controllerPath = Path.Combine("Assets", outputBaseDirectory, "Animations", $"{outputFileBaseName}AnimatorController.controller");
         controllerPath = controllerPath.Replace('\\', '/');
         
-        // Create animator controller
-        AnimatorController animatorController = AnimatorController.CreateAnimatorControllerAtPath(controllerPath);
+        // Create or get existing controller
+        AnimatorController controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(controllerPath);
+        if (controller == null)
+        {
+            controller = AnimatorController.CreateAnimatorControllerAtPath(controllerPath);
+        }
         
         // Get the root state machine
-        AnimatorStateMachine rootStateMachine = animatorController.layers[0].stateMachine;
+        AnimatorStateMachine rootStateMachine = controller.layers[0].stateMachine;
         
-        // Start position for states
-        Vector3 statePosition = new Vector3(300, 0, 0);
-        float yOffset = 70;
+        // Clear existing states if any
+        foreach (var state in rootStateMachine.states)
+        {
+            rootStateMachine.RemoveState(state.state);
+        }
         
-        // Create parameters for animation and direction
-        animatorController.AddParameter("Animation", AnimatorControllerParameterType.Int);
-        animatorController.AddParameter("Direction", AnimatorControllerParameterType.Int);
+        // Add idle state if we have an "idle" animation
+        AnimatorState idleState = null;
+        if (allAnimations.ContainsKey("idle") || allAnimations.ContainsKey("Idle"))
+        {
+            string idleKey = allAnimations.ContainsKey("idle") ? "idle" : "Idle";
+            string idleDir = allAnimations[idleKey].ContainsKey("default") ? "default" : 
+                             allAnimations[idleKey].Keys.First();
+                             
+            AnimationClip idleClip = allAnimations[idleKey][idleDir];
+            idleState = rootStateMachine.AddState("Idle");
+            idleState.motion = idleClip;
+            idleState.writeDefaultValues = true;
+            
+            // Set as default state
+            rootStateMachine.defaultState = idleState;
+        }
         
-        // Create sub-state machines for each animation type
-        int animIndex = 0;
+        // Add states for each animation
         foreach (var animPair in allAnimations)
         {
-            string animationName = animPair.Key;
-            Dictionary<string, AnimationClip> directionClips = animPair.Value;
+            string animName = animPair.Key;
             
-            // Create a sub-state machine for this animation
-            AnimatorStateMachine subStateMachine = rootStateMachine.AddStateMachine(animationName, statePosition);
-            statePosition.y += yOffset * 2;
-            
-            // Create a transition from Any State to this sub-state machine's entry state based on Animation parameter
-            var transition = rootStateMachine.AddAnyStateTransition(subStateMachine);
-            transition.AddCondition(AnimatorConditionMode.Equals, animIndex, "Animation");
-            transition.hasExitTime = false;
-            transition.duration = 0.1f;
-            
-            // Add animations for each direction
-            Vector3 subStatePosition = new Vector3(300, 0, 0);
-            
-            // Associate directions with parameter values
-            Dictionary<string, int> directionValues = new Dictionary<string, int>
-            {
-                { "down", 0 },
-                { "downleft", 1 },
-                { "left", 2 },
-                { "upleft", 3 },
-                { "up", 4 },
-                { "upright", 5 },
-                { "right", 6 },
-                { "downright", 7 },
-                { "default", 0 }
-            };
-            
-            // Create states for each direction
-            AnimatorState defaultState = null;
-            
-            foreach (var directionPair in directionClips)
-            {
-                string direction = directionPair.Key.ToLower();
-                AnimationClip clip = directionPair.Value;
+            // Skip idle as we've already handled it
+            if (animName.ToLower() == "idle")
+                continue;
                 
-                AnimatorState state = subStateMachine.AddState(direction, subStatePosition);
+            // For each direction variant
+            foreach (var dirPair in animPair.Value)
+            {
+                string direction = dirPair.Key;
+                AnimationClip clip = dirPair.Value;
+                
+                // Only create separate states for different directions if capturing multiple directions
+                string stateName = captureMultipleDirections ? 
+                    $"{animName}_{direction}" : animName;
+                
+                // Create state
+                AnimatorState state = rootStateMachine.AddState(stateName);
                 state.motion = clip;
-                subStatePosition.y += yOffset;
+                state.writeDefaultValues = true;
                 
-                // Save down or default as the default state
-                if (defaultState == null || direction == "down" || direction == "default")
+                // If we have an idle state, create a transition from idle to this animation
+                if (idleState != null)
                 {
-                    defaultState = state;
-                }
-                
-                // Add transitions based on Direction parameter
-                if (directionValues.ContainsKey(direction))
-                {
-                    int dirValue = directionValues[direction];
+                    var transition = idleState.AddTransition(state);
+                    transition.hasExitTime = false;
+                    transition.duration = 0.25f;
+                    transition.canTransitionToSelf = false;
                     
-                    // Create transitions from any state within this sub-state machine
-                    var dirTransition = subStateMachine.AddAnyStateTransition(state);
-                    dirTransition.AddCondition(AnimatorConditionMode.Equals, dirValue, "Direction");
-                    dirTransition.hasExitTime = false;
-                    dirTransition.duration = 0.1f;
+                    // Add parameter condition
+                    string paramName = animName;
+                    
+                    // Create parameter if it doesn't exist
+                    if (!HasParameter(controller, paramName, AnimatorControllerParameterType.Trigger))
+                    {
+                        controller.AddParameter(paramName, AnimatorControllerParameterType.Trigger);
+                    }
+                    
+                    transition.AddCondition(AnimatorConditionMode.If, 0, paramName);
+                    
+                    // Add transition back to idle
+                    var returnTransition = state.AddTransition(idleState);
+                    returnTransition.hasExitTime = true;
+                    returnTransition.exitTime = 0.9f; // Near the end of the animation
+                    returnTransition.duration = 0.1f;
                 }
             }
-            
-            // Set default state
-            if (defaultState != null)
-            {
-                subStateMachine.defaultState = defaultState;
-            }
-            
-            animIndex++;
         }
         
         // Save changes
-        EditorUtility.SetDirty(animatorController);
+        EditorUtility.SetDirty(controller);
         AssetDatabase.SaveAssets();
         
-        Debug.Log($"Created animator controller: {controllerPath}");
+        Debug.Log($"Created animator controller at {controllerPath} with {allAnimations.Count} animations");
+    }
+    
+    // Helper method to check if parameter exists
+    private bool HasParameter(AnimatorController controller, string paramName, AnimatorControllerParameterType paramType)
+    {
+        foreach (var param in controller.parameters)
+        {
+            if (param.name == paramName && param.type == paramType)
+                return true;
+        }
+        return false;
     }
 #endif
     

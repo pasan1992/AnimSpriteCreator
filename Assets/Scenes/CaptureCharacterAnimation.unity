@@ -594,7 +594,7 @@ PrefabInstance:
     - target: {fileID: 4540229000190281644, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 902d4a379c0f5ce4488083f4d6fb844a, type: 2}
+      objectReference: {fileID: 9100000, guid: 25cf2198b6e85ae438ce7b6aadd8605c, type: 2}
     - target: {fileID: 4948122169982268793, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1010,7 +1010,7 @@ MonoBehaviour:
   boundsExpansion: 1.432
   captureMultipleDirections: 1
   characterRoot: {fileID: 1395327995}
-  outputBaseDirectory: BaseAnimation1
+  outputBaseDirectory: BaseAnimation_Combat
   outputFileBaseName: animation_
   imageFormat: 0
   frameWidth: 256
