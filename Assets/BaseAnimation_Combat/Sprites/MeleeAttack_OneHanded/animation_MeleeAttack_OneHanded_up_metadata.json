@@ -1,0 +1,10 @@
+{
+  "animationName": "MeleeAttack_OneHanded",
+  "direction": "Up",
+  "frameCount": 21,
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "columns": 21,
+  "rows": 1,
+  "framesPerSecond": 24
+}

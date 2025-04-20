@@ -1,10 +1,10 @@
 {
   "animationName": "Idle",
   "direction": "Down",
-  "frameCount": 42,
+  "frameCount": 9,
   "frameWidth": 256,
   "frameHeight": 256,
-  "columns": 42,
+  "columns": 9,
   "rows": 1,
-  "framesPerSecond": 24
+  "framesPerSecond": 5
 }

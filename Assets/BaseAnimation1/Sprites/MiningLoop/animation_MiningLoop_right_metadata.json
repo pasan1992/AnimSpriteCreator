@@ -1,10 +1,10 @@
 {
   "animationName": "MiningLoop",
   "direction": "Right",
-  "frameCount": 31,
+  "frameCount": 7,
   "frameWidth": 256,
   "frameHeight": 256,
-  "columns": 31,
+  "columns": 7,
   "rows": 1,
-  "framesPerSecond": 24
+  "framesPerSecond": 5
 }

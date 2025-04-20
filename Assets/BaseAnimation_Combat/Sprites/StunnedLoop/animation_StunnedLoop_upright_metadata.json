@@ -1,0 +1,10 @@
+{
+  "animationName": "StunnedLoop",
+  "direction": "UpRight",
+  "frameCount": 48,
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "columns": 48,
+  "rows": 1,
+  "framesPerSecond": 24
+}

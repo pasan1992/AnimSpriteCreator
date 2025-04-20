@@ -1,0 +1,10 @@
+{
+  "animationName": "Longs_Idle1",
+  "direction": "UpLeft",
+  "frameCount": 8,
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "columns": 8,
+  "rows": 1,
+  "framesPerSecond": 5
+}

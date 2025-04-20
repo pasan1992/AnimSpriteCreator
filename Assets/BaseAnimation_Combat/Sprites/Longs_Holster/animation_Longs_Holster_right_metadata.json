@@ -1,0 +1,10 @@
+{
+  "animationName": "Longs_Holster",
+  "direction": "Right",
+  "frameCount": 10,
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "columns": 10,
+  "rows": 1,
+  "framesPerSecond": 5
+}

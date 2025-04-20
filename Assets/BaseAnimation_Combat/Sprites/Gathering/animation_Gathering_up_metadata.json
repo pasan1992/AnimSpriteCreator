@@ -1,0 +1,10 @@
+{
+  "animationName": "Gathering",
+  "direction": "Up",
+  "frameCount": 54,
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "columns": 54,
+  "rows": 1,
+  "framesPerSecond": 24
+}

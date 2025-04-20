@@ -264,7 +264,7 @@ public class ComprehensiveAnimationCreator : MonoBehaviour
                     else
                     {
                         // Just set the camera distance
-                        AdjustCameraDistance();
+                        //AdjustCameraDistance();
                     }
                     
                     // Give time for the camera to update
@@ -320,7 +320,7 @@ public class ComprehensiveAnimationCreator : MonoBehaviour
                 else
                 {
                     // Just set the camera distance
-                    AdjustCameraDistance();
+                    //AdjustCameraDistance();
                 }
                 
                 // Give time for the camera to update

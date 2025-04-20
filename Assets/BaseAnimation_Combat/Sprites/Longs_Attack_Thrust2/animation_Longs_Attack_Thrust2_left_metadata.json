@@ -1,0 +1,10 @@
+{
+  "animationName": "Longs_Attack_Thrust2",
+  "direction": "Left",
+  "frameCount": 12,
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "columns": 12,
+  "rows": 1,
+  "framesPerSecond": 5
+}

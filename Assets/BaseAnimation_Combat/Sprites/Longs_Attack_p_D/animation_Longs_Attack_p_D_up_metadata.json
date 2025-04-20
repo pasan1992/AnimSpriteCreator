@@ -1,0 +1,10 @@
+{
+  "animationName": "Longs_Attack_p_D",
+  "direction": "Up",
+  "frameCount": 13,
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "columns": 13,
+  "rows": 1,
+  "framesPerSecond": 5
+}
