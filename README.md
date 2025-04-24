@@ -37,6 +37,6 @@ It captures your character's animation from **8 directions** — up, down, left,
 
 Below is an example of a generated sprite sheet from an animated 3D character:
 
-![Generated Sprite Sheet](./example.gif)
+![Generated Sprite Sheet](./Assets/example.gif)
 
 ---
