@@ -35,7 +35,7 @@ It captures your character's animation from **8 directions** — up, down, left,
 
 ## 🖼️ Output Example
 
-Below is an example of a generated sprite sheet from an animated 3D character:
+Below is an example is created using the generated sprite sheet from an animated 3D character:
 
 ![Generated Sprite Sheet](./Assets/example.gif)
 
