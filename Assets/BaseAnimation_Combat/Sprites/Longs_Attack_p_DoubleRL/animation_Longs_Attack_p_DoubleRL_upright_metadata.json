@@ -1,10 +1,10 @@
 {
   "animationName": "Longs_Attack_p_DoubleRL",
   "direction": "UpRight",
-  "frameCount": 11,
+  "frameCount": 26,
   "frameWidth": 256,
   "frameHeight": 256,
-  "columns": 11,
-  "rows": 1,
-  "framesPerSecond": 5
+  "columns": 8,
+  "rows": 4,
+  "framesPerSecond": 12
 }

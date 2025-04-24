@@ -1,10 +1,10 @@
 {
   "animationName": "Longs_RunRight45",
   "direction": "Up",
-  "frameCount": 4,
+  "frameCount": 10,
   "frameWidth": 256,
   "frameHeight": 256,
-  "columns": 4,
-  "rows": 1,
-  "framesPerSecond": 5
+  "columns": 8,
+  "rows": 2,
+  "framesPerSecond": 12
 }

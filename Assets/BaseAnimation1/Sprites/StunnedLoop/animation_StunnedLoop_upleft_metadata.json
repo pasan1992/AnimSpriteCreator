@@ -1,10 +1,10 @@
 {
   "animationName": "StunnedLoop",
   "direction": "UpLeft",
-  "frameCount": 10,
+  "frameCount": 24,
   "frameWidth": 256,
   "frameHeight": 256,
-  "columns": 10,
-  "rows": 1,
-  "framesPerSecond": 5
+  "columns": 8,
+  "rows": 3,
+  "framesPerSecond": 12
 }

@@ -749,6 +749,7 @@ public class ComprehensiveAnimationCreator : MonoBehaviour
             importer.filterMode = FilterMode.Bilinear;
             importer.mipmapEnabled = false;
             importer.alphaIsTransparency = true;
+            importer.isReadable = true; // Enable read/write for runtime manipulation
             
             // Create sprite sheet import settings
             SpriteMetaData[] spriteSheet = GenerateSpriteSheetMetaData(fullPath);

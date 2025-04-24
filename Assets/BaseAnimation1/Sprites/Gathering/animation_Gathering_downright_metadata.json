@@ -1,10 +1,10 @@
 {
   "animationName": "Gathering",
   "direction": "DownRight",
-  "frameCount": 12,
+  "frameCount": 27,
   "frameWidth": 256,
   "frameHeight": 256,
-  "columns": 12,
-  "rows": 1,
-  "framesPerSecond": 5
+  "columns": 8,
+  "rows": 4,
+  "framesPerSecond": 12
 }
